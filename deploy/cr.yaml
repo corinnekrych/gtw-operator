@@ -1,0 +1,4 @@
+apiVersion: "gtw.fabric8.org/v1alpha1"
+kind: "GTW"
+metadata:
+  name: "example"
