@@ -97,6 +97,9 @@ Session.vim
 # auto-generated tag files
 tags
 
+### idea ####
+.idea/
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
