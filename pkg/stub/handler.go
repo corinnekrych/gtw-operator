@@ -26,7 +26,7 @@ func (h *Handler) Handle(ctx context.Context, event sdk.Event) error {
 	case *v1alpha1.GTW:
 		err := sdk.Create(newGTWPod(o))
 		if err != nil && !errors.IsAlreadyExists(err) {
-			logrus.Errorf("Failed to create busybox pod : %v", err)
+			logrus.Errorf("Failed to create gtwpod pod : %v", err)
 			return err
 		}
 	}
@@ -35,7 +35,7 @@ func (h *Handler) Handle(ctx context.Context, event sdk.Event) error {
 
 func newGTWPod(cr *v1alpha1.GTW) *corev1.Pod {
 	labels := map[string]string{
-		"app": "GTWPod",
+		"app": "gtwpod",
 		"corinne": "boo",
 	}
 	input := cr.Spec.Input
@@ -45,7 +45,7 @@ func newGTWPod(cr *v1alpha1.GTW) *corev1.Pod {
 			APIVersion: "v1",
 		},
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      "GTWPod",
+			Name:      "gtwpod",
 			Namespace: cr.Namespace,
 			OwnerReferences: []metav1.OwnerReference{
 				*metav1.NewControllerRef(cr, schema.GroupVersionKind{
