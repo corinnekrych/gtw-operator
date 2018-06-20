@@ -22,7 +22,7 @@ type GTW struct {
 }
 
 type GTWSpec struct {
-	// Fill me
+	Input string `json:"input"`
 }
 type GTWStatus struct {
 	// Fill me
