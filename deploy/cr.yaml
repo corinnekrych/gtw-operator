@@ -1,4 +1,9 @@
 apiVersion: "gtw.fabric8.org/v1alpha1"
 kind: "GTW"
 metadata:
-  name: "example"
+  name: "gateway-example"
+  labels:
+    myapp: "true"
+Spec:
+  input: "Hello Corinne"
+  greeting: "boo"
