@@ -81,5 +81,14 @@ oc delete gtw gateway-example
 ```
 ==> observe the new pod created
 
+### Dev environment
+In dev mode, no need to package in container and deploy, simply run your operator locally:
+
+```
+$GOPATH/bin/operator-sdk up local --kubeconfig=$HOME/.kube/config --namespace=gtw
+```
+
+> Note: if namespace is not specified, il apples to `default`
+
 ## Links
 * [Developing Kubernetes Operator is now easy with Operator Framework](https://devops.college/developing-kubernetes-operator-is-now-easy-with-operator-framework-d3194a7428ff)

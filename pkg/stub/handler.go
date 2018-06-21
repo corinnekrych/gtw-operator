@@ -25,6 +25,7 @@ func (h *Handler) Handle(ctx context.Context, event sdk.Event) error {
 	switch o := event.Object.(type) {
 	case *v1alpha1.GTW:
 		err := sdk.Create(newGTWPod(o))
+		logrus.Info("--> CREATE a new POD.........")
 		if err != nil && !errors.IsAlreadyExists(err) {
 			logrus.Errorf("Failed to create gtwpod pod : %v", err)
 			return err

@@ -20,13 +20,13 @@ func printVersion() {
 
 func main() {
 	printVersion()
-
 	resource := "gtw.fabric8.org/v1alpha1"
 	kind := "GTW"
 	namespace, err := k8sutil.GetWatchNamespace()
 	if err != nil {
 		logrus.Fatalf("Failed to get watch namespace: %v", err)
 	}
+
 	resyncPeriod := 5
 	logrus.Infof("Watching in main.go %s, %s, %s, %d", resource, kind, namespace, resyncPeriod)
 	sdk.Watch(resource, kind, namespace, resyncPeriod)
